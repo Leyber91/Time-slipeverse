@@ -1,9 +1,5 @@
-<<<<<<< HEAD
 const vid = document.getElementById('myVideo');
 const vidHidden = document.getElementById('myVideoHidden');
-=======
-
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
 // Creation of the home page buttons and the story buttons
 // Go Home page buttons
 let homePageButtons = () =>{
@@ -14,7 +10,6 @@ let homePageButtons = () =>{
     let terminalScreen = document.getElementById('storyPage')
     let stateValues = Object.values(state)
     let visualizer = document.getElementById('visualizer')
-<<<<<<< HEAD
    
     terminalScreen.style.backgroundImage = "";
 
@@ -29,14 +24,6 @@ let homePageButtons = () =>{
     
 
 
-=======
-
-    
-
-
-
-
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
     //let nonValidTimelines = 
     //LOCAL STORAGE ACTION
     //WILL ONLY EXECUTE ONCE YOU ARE ON THE GAME SCREEN
@@ -85,20 +72,14 @@ let homePageButtons = () =>{
     scores.addEventListener('click', () => scorePagebutton())
     footer.appendChild(button);
     footer.appendChild(scores);
-<<<<<<< HEAD
     vid.id = 'myVideo'
 
-=======
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
 }
 
 
 //Story page button
 let storyPageButton = () =>{
-<<<<<<< HEAD
     
-=======
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
     let footer = document.querySelector('#controler')
     let container = document.querySelector('.elementHidden')
     container.className = 'container'
@@ -106,11 +87,8 @@ let storyPageButton = () =>{
     while(footer.firstChild){
         footer.removeChild(footer.firstChild)
     }
-<<<<<<< HEAD
     vid.id = 'myVideoHidden'
 
-=======
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
 /*
 // Generate the content of the story page
 // Generate the div nodes
@@ -135,11 +113,6 @@ parent__container.appendChild(optionPath)
 // END GENERATING CONTENT
 */
     startJourney()
-<<<<<<< HEAD
-=======
-
-
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
     const button = document.createElement('button')
     button.innerText = 'FINISH TIMELINE'
     button.className = 'button controllerButton'
@@ -147,31 +120,18 @@ parent__container.appendChild(optionPath)
 
 
     footer.appendChild(button);
-<<<<<<< HEAD
-
-=======
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
 }
 
 //Story page button. TO BE CONTINUED
 let scorePagebutton = () =>{
-<<<<<<< HEAD
     vid.id = 'myVideoHidden'
-=======
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
     let footer = document.querySelector('#controler')
     let terminalScreen = document.querySelector('.terminalScreen')
     const button = document.createElement('button')
     // define de visualizer on result
-<<<<<<< HEAD
     //const visualizer = document.createElement('div')
     //visualizer.className = 'container'
     //visualizer.id = 'visualizer'
-=======
-    const visualizer = document.createElement('div')
-    visualizer.className = 'container'
-    visualizer.id = 'visualizer'
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
     let container = document.querySelector('.elementHidden')
     /// We add class timelines to make have an identifier for the container
     container.className = 'container timelines'
@@ -188,11 +148,7 @@ let scorePagebutton = () =>{
     button.className = 'button controllerButton'
     button.addEventListener('click', () => homePageButtons())
     footer.appendChild(button)
-<<<<<<< HEAD
     //terminalScreen.appendChild(visualizer)
-=======
-    terminalScreen.appendChild(visualizer)
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
     // addd absolute botttom.
 
     timeLinesHistory()

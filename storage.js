@@ -53,50 +53,29 @@ let timelineClassifier = (object) => {
 }
 
 let timelineDisplayer = (timeline) => {
-<<<<<<< HEAD
     //let visualizer = document.getElementById('visualizer')
     let background = document.getElementById('storyPage')
     switch(timeline) {
         case 'Type I timeline':
             console.log('Type I background')
             visualizer.style.backgroundImage = "url('/ImagesVideos/typeI.jpg')"
-=======
-    let visualizer = document.getElementById('visualizer')
-    switch(timeline) {
-        case 'Type I timeline':
-            console.log('Type I background')
-            visualizer.style.backgroundImage = "url('/Images/typeI.jpg')"
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
             break
 
         case 'Type II timeline':
             console.log('Type II background')
-<<<<<<< HEAD
             visualizer.style.backgroundImage = "url('/ImagesVideos/typeII.jpg')"
-=======
-            visualizer.style.backgroundImage = "url('/Images/typeII.jpg')"
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
             break
 
         case 'Type III timeline':
             console.log('Type III background')
-<<<<<<< HEAD
             visualizer.style.backgroundImage = "url('/ImagesVideos/typeIII.jpg')"
-=======
-            visualizer.style.backgroundImage = "url('/Images/typeIII.jpg')"
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
             break
 
         default:
             console.log('Type Incomplete background')
-<<<<<<< HEAD
             background.style.backgroundImage = "url('/ImagesVideos/typeUnfinished.jpg')"
 }
 
-=======
-            visualizer.style.backgroundImage = "url('/Images/typeUnfinished.jpg')"
-}
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
 }
 
 
