@@ -45,11 +45,8 @@ storyPageLoader = (pageIndex) => {
             button.className = 'button'
             // add an even listener to each generated button
             button.addEventListener('click', () => pickYourPath(option))
-<<<<<<< HEAD
             button.addEventListener('click', () => timeDilationChecker())
             button.addEventListener('click', () => planetLocationIndicator())
-=======
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
             //append the options I have
             pathToChoose.appendChild(button)
 
@@ -74,10 +71,7 @@ pickYourPath = (path) => {
     if (nextPathNode <= 0) {
         state = Object.assign(state, path.setState)
         saveTimeline()
-<<<<<<< HEAD
         speedController = 60;
-=======
->>>>>>> 87cfb4072773c17f8252caa982a1f2ba1b7b2362
         return startJourney()
     }
     //Will change the state to the one on setState. Updating the current and adding new ones
