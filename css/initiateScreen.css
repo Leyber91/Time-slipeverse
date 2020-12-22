@@ -1,0 +1,20 @@
+.terminalScreen {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    align-content: space-evenly;
+    justify-content: space-between;
+    padding: 1em 2em;
+    border: 1em solid rgba(44, 78, 87, 0.727);
+    border-radius: 4em;
+    background-color:rgba(81, 90, 88, 0.378);
+    /* offset-x | offset-y | blur-radius | spread-radius | color */
+    box-shadow: 0.5em 0em 0.3em 0.1em rgba(113, 151, 140, 0.796), -0.5em 0em 0.3em 0.1em rgba(113, 151, 140, 0.796);
+    width: 90vw;
+    height: 70vh;
+    border-bottom : none;
+    border-top : none;
+    position: relative;
+    background-size: cover;
+}
+
