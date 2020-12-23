@@ -1045,24 +1045,333 @@ const storyLines = [
 
 
 //MOUNTAIN WORLD
+// LANDING
         {
             id: 36,
             text: 'Still affected by the black whole, the mountain world is a strange mix of mountains both in land and at the sky as clouds, there seem to be two places of interest for the aircraft to land, ',
             options: [
                 {
                     text: 'Choose human virtue',
-                    requiredState: (currentState) => currentState.communicate,
+                    requiredState: (currentState) => currentState.mountainWorld,
                     setState: { damned : true },
-                    nextPath: 10
+                    nextPath: 37
                     },
                     {
                     text: 'Start the endless fight',
-                    requiredState: (currentState) => currentState.communicate,
+                    requiredState: (currentState) => currentState.mountainWorld,
                     setState: {suicidal : true},
-                    nextPath: 13,
+                    nextPath: 38,
                 },
             ]
         },
+
+            // LANDING FLOATING PLATFORM
+            {
+                id: 37,
+                text: 'Still affected by the black whole, the mountain world is a strange mix of mountains both in land and at the sky as clouds, there seem to be two places of interest for the aircraft to land, ',
+                options: [
+                    {
+                        text: 'Choose human virtue',
+                        requiredState: (currentState) => currentState.mountainWorld,
+                        setState: { damned : true },
+                        nextPath: 39
+                        },
+                        {
+                        text: 'Start the endless fight',
+                        requiredState: (currentState) => currentState.mountainWorld,
+                        setState: {suicidal : true},
+                        nextPath: 40,
+                    },
+                ]
+            },
+
+                // ENTER THE STRUCTURE
+                {
+                    id: 39,
+                    text: 'Still affected by the black whole, the mountain world is a strange mix of mountains both in land and at the sky as clouds, there seem to be two places of interest for the aircraft to land, ',
+                    options: [
+                        {
+                            text: 'Choose human virtue',
+                            requiredState: (currentState) => currentState.mountainWorld,
+                            setState: { damned : true },
+                            nextPath: 41
+                        },
+                    ]
+                },
+                // ENTER THE TUNNEL
+                {
+                    id: 40,
+                    text: 'Still affected by the black whole, the mountain world is a strange mix of mountains both in land and at the sky as clouds, there seem to be two places of interest for the aircraft to land, ',
+                    options: [
+                        {
+                            text: 'Choose human virtue',
+                            requiredState: (currentState) => currentState.mountainWorld,
+                            setState: { damned : true },
+                            nextPath: 41
+                        },
+                    ]
+                },
+                    // END U IN FRONT OF AN SCRIPTION 11 DECIMAL FOR PI NUMBER
+                    {
+                        id: 41,
+                        text: 'Take the test ',
+                        options: [
+                            {
+                                text: 'Begin',
+                                requiredState: (currentState) => currentState.mountainWorld,
+                                setState: { damned : true },
+                                nextPath: 42
+                            },
+                        ]
+                    },
+                        // TEST QUESTION 1
+                        {
+                            id: 42,
+                            text: 'First question ',
+                            options: [
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 43
+                                },
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 43
+                                },
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 43
+                                },
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 43
+                                },
+                            ]
+                        },
+                        // TEST QUESTION 2
+                        {
+                            id: 43,
+                            text: 'Second question ',
+                            options: [
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 44
+                                },
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 44
+                                },
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 44
+                                },
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 44
+                                },
+                            ]
+                        },
+                        // TEST QUESTION 3
+                        {
+                            id: 44,
+                            text: 'Third question ',
+                            options: [
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 45
+                                },
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 45
+                                },
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 45
+                                },
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 45
+                                },
+                            ]
+                        },
+                        // TEST QUESTION 4
+                        {
+                            id: 45,
+                            text: 'Fourth question ',
+                            options: [
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 46
+                                },
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 46
+                                },
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 46
+                                },
+                                {
+                                    text: 'Begin',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 46
+                                },
+                            ]
+                        },
+                    // TEST RESULT
+                    // THE TEST WILL BE THRPUGH WITH THE SAME THOUGH SO, IF A CLEAR MIND IS SHOWN
+                    // THE OPTION TO THE ARTIFACT WILL BE SWHON
+                        {
+                            id: 46,
+                            text: 'You though show you the way to go ',
+                            options: [
+                                {
+                                    text: 'Go to the exit',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 48
+                                },
+                                {
+                                    text: 'Go to the opened gate',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 47
+                                },
+                            ]
+                        },
+                        {
+                            id: 47,
+                            text: 'You though show you the way to go ',
+                            options: [
+                                {
+                                    text: 'Go to the exit',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 48
+                                },
+                            ]
+                        },
+
+                    // GO BACK TO THE SHIP
+                        {
+                            id: 48,
+                            text: 'Fourth question ',
+                            options: [
+                                {
+                                    text: 'Go to the ship',
+                                    requiredState: (currentState) => currentState.mountainWorld,
+                                    setState: { damned : true },
+                                    nextPath: 2
+                                },
+                            ]
+                        },
+
+            // LANDING VALLEY
+            {
+                id: 38,
+                text: 'Still affected by the black whole, the mountain world is a strange mix of mountains both in land and at the sky as clouds, there seem to be two places of interest for the aircraft to land, ',
+                options: [
+                    {
+                        text: 'Cave',
+                        requiredState: (currentState) => currentState.mountainWorld,
+                        setState: { damned : true },
+                        nextPath: 49
+                        },
+                        {
+                        text: 'Scalate',
+                        requiredState: (currentState) => currentState.mountainWorld,
+                        setState: {suicidal : true},
+                        nextPath: 50,
+                    },
+                ]
+            },
+                // GO INTO THE CAVE
+                {
+                    id: 49,
+                    text: 'Go inside a cave ',
+                    options: [
+                        {
+                            text: 'Explore deeper',
+                            requiredState: (currentState) => currentState.mountainWorld,
+                            setState: { damned : true },
+                            nextPath: 51
+                            },
+                            {
+                            text: 'Go outside of it and try to climb',
+                            requiredState: (currentState) => currentState.mountainWorld,
+                            setState: {suicidal : true},
+                            nextPath: 50,
+                        },
+                    ]
+                },
+                    // GO DEEPER INTO THE CAVE
+                    {
+                        id: 51,
+                        text: 'Going deeper you find a portal ',
+                        options: [
+                            {
+                                text: 'Take the portal', // it will be the sae opton taking you to different places
+                                requiredState: (currentState) => currentState.mountainWorld,
+                                setState: { damned : true },
+                                nextPath: 38
+                                },
+                                {
+                                text: 'Take the portal', //this option only available after first reebot
+                                requiredState: (currentState) => currentState.reboots,
+                                setState: {suicidal : true},
+                                nextPath: 41,
+                            },
+                        ]
+                    },
+                // GO DO SOME CLIMBING 
+                {
+                    id: 50,
+                    text: 'Still affected by the black whole, the mountain world is a strange mix of mountains both in land and at the sky as clouds, there seem to be two places of interest for the aircraft to land, ',
+                    options: [
+                        {
+                            text: 'Cave',
+                            requiredState: (currentState) => currentState.mountainWorld,
+                            setState: { damned : true },
+                            nextPath: 37
+                            },
+                            {
+                            text: 'Scalate',
+                            requiredState: (currentState) => currentState.mountainWorld,
+                            setState: {suicidal : true},
+                            nextPath: 38,
+                        },
+                    ]
+                },
 
 
 
