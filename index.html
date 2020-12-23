@@ -9,6 +9,14 @@
     <link href="https://fonts.googleapis.com/css2?family=Orbitron&display=swap" rel="stylesheet">
     <script src="/systemCanvas.js" type = "text/javascript"></script>
 </head>
+<script type="text/javascript">      
+    HTMLElement.prototype.alpha = function(a) {
+      current_color = getComputedStyle(this).getPropertyValue("background-color");
+      match = /rgba?\((\d+)\s*,\s*(\d+)\s*,\s*(\d+)\s*(,\s*\d+[\.\d+]*)*\)/g.exec(current_color)
+      a = a > 1 ? (a / 100) : a;
+      this.style.backgroundColor = "rgba(" + [match[1],match[2],match[3],a].join(',') +")";
+    }
+</script>
 <body>
 
 <!--HOME PAGE-->

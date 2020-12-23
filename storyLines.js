@@ -54,6 +54,7 @@ const storyLines = [
                 setState: { timeDilation: 10 , hellEternum : true},
                 nextPath: 3
             },
+            // setState: { timeDilation: 4 , hellEternum : false, waveWorld : false, mountainWorld:false, binaryWorlds : false, ringWorld : false, ultimaMundi : false},
             {
                 text: 'Wave World',
                 // After the first option passes, we must set the required to be displayed
@@ -130,7 +131,7 @@ const storyLines = [
                 // with required state if the option is false, the options wil not show up
                 requiredState: (currentState) => currentState.heatShield,
                 //Here we set the three types of time dilation
-                setState: { planetDescend : false, tankFull: false},
+                setState: { planetDescend : false, tankFull: false, hellEternum: false},
                 nextPath: 2
             }
         ]
@@ -605,14 +606,14 @@ const storyLines = [
                 text: 'Clamber down the beast\'s ragged fur and escape through the genitalia',
                 // This choice moves you forward
                 requiredState: (currentState) => currentState.treachery && !currentState.test && !currentState.damned,
-                setState: { artifact: false},
+                setState: { artifact: false, satan: true},
                 nextPath: 5
             },
             {
                 text: 'Take the artifact',
                 // This choice saves your progress and let you go back to the portal room
                 requiredState: (currentState) => currentState.treachery && !currentState.test && !currentState.damned,
-                setState: { artifact: true},
+                setState: { artifact: true, satan: true},
                 nextPath: 5
             },
             {
@@ -626,7 +627,7 @@ const storyLines = [
                 text: 'Kiss Satan\'s feet',
                 // This choice saves your progress and let you go back to the portal room
                 requiredState: (currentState) => currentState.treachery && currentState.test && !currentState.damned,
-                setState: { satan: true},
+                setState: { satan: true , hellEternum: false},
                 nextPath: 33 //TRANSITION
             },
         ]
@@ -645,7 +646,7 @@ const storyLines = [
         {
             text: 'Go back to the Moon gate',
             requiredState: (currentState) => currentState.waveWorld,
-            setState: { planetDescend : false, tankFull: false},
+            setState: { planetDescend : false, tankFull: false, waveWorld: false},
             nextPath: 2
         }
     ]
@@ -842,7 +843,7 @@ const storyLines = [
                         {
                             text: 'Take a test',
                             requiredState: (currentState) => currentState.communicate && !currentState.hellEternum,
-                            setState: {test : true},
+                            setState: {test : true, hellEternum: true},
                             nextPath: 6
                         },
                         {
@@ -912,7 +913,7 @@ const storyLines = [
                         {
                             text: 'Go back to space',
                             requiredState: (currentState) => currentState.stayClose,
-                            setState: { visitedWaveWorld : true},
+                            setState: { visitedWaveWorld : true, waveWorld: false},
                             nextPath: 2
                         },
                         {
@@ -938,7 +939,7 @@ const storyLines = [
                         {
                             text: 'I will let the ship handle itself, set autopilot and straight to space',
                             requiredState: (currentState) => currentState.stayClose || currentState.outsideHull || currentState.mountain,
-                            setState: { autopilot : true, manual : false},
+                            setState: { autopilot : true, manual : false, waveWorld: false},
                             nextPath: 2
                         },
                         {
@@ -957,13 +958,13 @@ const storyLines = [
                         {
                             text: 'Easy maneuvers and out of here',
                             requiredState: (currentState) => currentState.manual && currentState.evasion,
-                            setState: { easyMode: true, mediumMode : false , hardMode : false},
+                            setState: { easyMode: true, mediumMode : false , hardMode : false, waveWorld: false},
                             nextPath: 2
                         },
                         {
                             text: 'Medium complication, I will go through it with little attention',
                             requiredState: (currentState) => currentState.manual && currentState.surfing,
-                            setState: { easyMode: false, mediumMode : true , hardMode : false},
+                            setState: { easyMode: false, mediumMode : true , hardMode : false, waveWorld: false},
                             nextPath: 2
                         },
                         {
@@ -982,13 +983,13 @@ const storyLines = [
                         {
                             text: 'I found a way through it, igniting engines',
                             requiredState: (currentState) => currentState.hardMode && !currentState.throw && !currentState.smash,
-                            setState: { skilledPilot : true},
+                            setState: { skilledPilot : true, waveWorld: false},
                             nextPath: 2
                         },
                         {
                             text: 'This will damage the ship but at least I will survive',
                             requiredState: (currentState) => currentState.hardMode && currentState.throw && !currentState.heavy,
-                            setState: { recklessPilot : true},
+                            setState: { recklessPilot : true, waveWorld: false},
                             nextPath: 2
                         },
                         {
@@ -1006,7 +1007,7 @@ const storyLines = [
                         {
                             text: 'You made it through the wave, ship is able to fly... and you are capable to get out',
                             requiredState: (currentState) => currentState.kamikazePilot,
-                            setState: { miraclePilot : true},
+                            setState: { miraclePilot : true, waveWorld: false},
                             nextPath: 2
                         },
                         {
@@ -1018,7 +1019,7 @@ const storyLines = [
                         {
                             text: 'You ony wake up to discover you are going to get drawn by water and there is nothing to do about it...',
                             requiredState: (currentState) => currentState.hardMode && !currentState.heavy,
-                            setState: { damned : true},
+                            setState: { damned : true, hellEternum: true},
                             nextPath: 7
                         }
                     ]
@@ -1037,7 +1038,7 @@ const storyLines = [
                         {
                             text: 'Start the endless fight',
                             requiredState: (currentState) => currentState.communicate,
-                            setState: {suicidal : true},
+                            setState: {suicidal : true, hellEternum: true},
                             nextPath: 13,
                         },
                     ]
@@ -1290,7 +1291,7 @@ const storyLines = [
                                 {
                                     text: 'Go to the ship',
                                     requiredState: (currentState) => currentState.mountainWorld,
-                                    setState: { damned : true },
+                                    setState: { damned : true, mountainWorld: false },
                                     nextPath: 2
                                 },
                             ]
@@ -1380,7 +1381,7 @@ const storyLines = [
                         {
                             text: 'Go back to the ship',
                             requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            setState: { damned : true, mountainWorld: false},
                             nextPath: 2
                             },
                     ]
@@ -1393,7 +1394,7 @@ const storyLines = [
                         {
                             text: 'Go back to the ship',
                             requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            setState: { damned : true, mountainWorld: false},
                             nextPath: 2
                             },
                     ]
@@ -1466,7 +1467,7 @@ const storyLines = [
                         {
                             text: 'Go to another planet',
                             requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            setState: { damned : true , binaryWorlds : false },
                             nextPath: 2
                         },
                         {
@@ -1511,7 +1512,7 @@ const storyLines = [
                         {
                             text: 'I pass',
                             requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            setState: { damned : true, binaryWorlds : false},
                             nextPath: 2
                         },
                     ]
@@ -1588,7 +1589,7 @@ const storyLines = [
                         {
                             text: 'Get out of this planet',
                             requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            setState: { damned : true, ringWorld: false },
                             nextPath: 2
                         },
                     ]
@@ -1602,7 +1603,7 @@ const storyLines = [
                         {
                             text: 'Take the bed and get out of the planet',
                             requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            setState: { damned : true, ringWorld: false },
                             nextPath: 2
                         },
                         {
@@ -1622,7 +1623,7 @@ const storyLines = [
                             {
                                 text: 'Go back to the ship',
                                 requiredState: (currentState) => currentState.mountainWorld,
-                                setState: { damned : true },
+                                setState: { damned : true, ringWorld: false },
                                 nextPath: 2
                             },
                         ]
@@ -1846,7 +1847,7 @@ const storyLines = [
                         {
                             text: 'Gives ypu a present, you go back to the ship',
                             requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true }, 
+                            setState: { damned : true, ultimaMundi: false }, 
                             nextPath: 2
                         },
                         {
@@ -1902,7 +1903,7 @@ const storyLines = [
                             {
                                 text: 'You go back to the ship',
                                 requiredState: (currentState) => currentState.mountainWorld,
-                                setState: { damned : true }, 
+                                setState: { damned : true, ultimaMundi: false }, 
                                 nextPath: 2
                             },
                         ]

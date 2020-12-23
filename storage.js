@@ -29,9 +29,16 @@ console.log(localStorage.length)
 
 // This following function is created to classify the different timelines
 let timelineClassifier = (object) => {
-    let typeI = '{"timeStretches":false}'
+    let typeI = '{"reboots":0,"timeForwardMachine":true,"satan":true}'
     let typeII = '{"timeStretches":true,"hatch":true,"lake":false}'
     let typeIII = '{"timeStretches":true,"hatch":false,"lake":true}'
+    let typeIV = '{"timeStretches":true,"hatch":false,"lake":true}'
+    let typeV = '{"timeStretches":true,"hatch":false,"lake":true}'
+    let typeVI = '{"timeStretches":true,"hatch":false,"lake":true}'
+    let typeVII = '{"timeStretches":true,"hatch":false,"lake":true}'
+    let typeVIII = '{"timeStretches":true,"hatch":false,"lake":true}'
+    let typeIX = '{"timeStretches":true,"hatch":false,"lake":true}'
+    let typeX = '{"timeStretches":true,"hatch":false,"lake":true}'
 
     switch(object) {
         case typeI:
@@ -46,6 +53,34 @@ let timelineClassifier = (object) => {
             console.log('Type III timeline')
             return 'Type III timeline'
 
+        case typeIV:
+            console.log('Type IV timeline')
+            return 'Type IV timeline'
+
+        case typeV:
+            console.log('Type V timeline')
+            return 'Type V timeline'
+
+        case typeVI:
+            console.log('Type VI timeline')
+            return 'Type VI timeline'
+
+        case typeVII:
+            console.log('Type VII timeline')
+            return 'Type VII timeline'
+
+        case typeVIII:
+            console.log('Type VIII timeline')
+            return 'Type VIII timeline'
+
+        case typeIX:
+            console.log('Type IX timeline')
+            return 'Type IX timeline'
+
+        case typeX:
+            console.log('Type X timeline')
+            return 'Type X timeline'
+
         default:
             console.log('Type Incomplete')
             return 'Type Incomplete'
@@ -58,17 +93,52 @@ let timelineDisplayer = (timeline) => {
     switch(timeline) {
         case 'Type I timeline':
             console.log('Type I background')
-            visualizer.style.backgroundImage = "url('/ImagesVideos/typeI.jpg')"
+            background.style.backgroundImage = "url('/ImagesVideos/typeI.jpg')"
             break
 
         case 'Type II timeline':
             console.log('Type II background')
-            visualizer.style.backgroundImage = "url('/ImagesVideos/typeII.jpg')"
+            background.style.backgroundImage = "url('/ImagesVideos/typeII.jpg')"
             break
 
         case 'Type III timeline':
             console.log('Type III background')
-            visualizer.style.backgroundImage = "url('/ImagesVideos/typeIII.jpg')"
+            background.style.backgroundImage = "url('/ImagesVideos/typeIII.jpg')"
+            break
+
+        case 'Type IV timeline':
+            console.log('Type IV background')
+            background.style.backgroundImage = "url('/ImagesVideos/typeIV.jpg')"
+            break
+
+        case 'Type V timeline':
+            console.log('Type V background')
+            background.style.backgroundImage = "url('/ImagesVideos/typeV.jpg')"
+            break
+
+        case 'Type VI timeline':
+            console.log('Type VI background')
+            background.style.backgroundImage = "url('/ImagesVideos/typeVI.jpg')"
+            break
+
+        case 'Type VII timeline':
+            console.log('Type VII background')
+            background.style.backgroundImage = "url('/ImagesVideos/typeVII.jpg')"
+            break
+
+        case 'Type VIII timeline':
+            console.log('Type VIII background')
+            background.style.backgroundImage = "url('/ImagesVideos/typeVIII.jpg')"
+            break
+
+        case 'Type IX timeline':
+            console.log('Type IX background')
+            background.style.backgroundImage = "url('/ImagesVideos/typeIX.jpg')"
+            break
+
+        case 'Type X timeline':
+            console.log('Type X background')
+            background.style.backgroundImage = "url('/ImagesVideos/typeX.jpg')"
             break
 
         default:
@@ -91,29 +161,26 @@ let timeLinesHistory = () => {
         //First we copy the values for TimeMachine and Reboot
         let timeMachineUse = dissectedTimeline.timeForwardMachine //Time machine use
         let timeReboots = dissectedTimeline.reboots //Times rebooted, to be used
-
-        //Now I clean the time from the timeLine loop and the timeMachine
-        delete dissectedTimeline.timeForwardMachine
-        delete dissectedTimeline.reboots
-
-        //A check is done to ensure all was carried as planned
-        console.log(dissectedTimeline)
-        console.log(timeMachineUse)
         console.log(timeReboots)
+        // Using Object Destructuring and Property Shorthand;
+        const timelineObjectType = (({ reboots, timeForwardMachine, satan }) => ({ reboots, timeForwardMachine, satan}))(dissectedTimeline)
 
+        console.log(timelineObjectType)
+        //Now I clean the time from the timeLine loop and the timeMachine
+        //delete dissectedTimeline.timeForwardMachine
+        //delete dissectedTimeline.reboots
+        //A check is done to ensure all was carried as planned
+        //console.log(dissectedTimeline)
+       // console.log(timeMachineUse)
+        //console.log(timeReboots)
         // We transform each timeline
-        let dissectedTimelineS = JSON.stringify(dissectedTimeline)
+        let dissectedTimelineS = JSON.stringify(timelineObjectType)
         console.log(dissectedTimelineS)
         //Now deleted we can proceed with the timeline path analysis through the generated switch function
         timeline = timelineClassifier(dissectedTimelineS) //assign the value obtained
-        
         console.log(timeline)
-
         // let's make a function that creates a container bellow and shows and image depending on the timeline
         let timelineType = timeline
-
-
-
         const entry = document.createElement('button')
         entry.className = 'button'
         //timeline is now timelineType and it is taken out
