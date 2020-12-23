@@ -1052,15 +1052,15 @@ const storyLines = [
             text: 'Still affected by the black whole, the mountain world is a strange mix of mountains both in land and at the sky as clouds, there seem to be two places of interest for the aircraft to land, ',
             options: [
                 {
-                    text: 'Choose human virtue',
+                    text: 'Land into the floating platform',
                     requiredState: (currentState) => currentState.mountainWorld,
-                    setState: { damned : true },
+                    setState: { platform : true, valley : false },
                     nextPath: 37
                     },
                     {
-                    text: 'Start the endless fight',
+                    text: 'Land into the valley',
                     requiredState: (currentState) => currentState.mountainWorld,
-                    setState: {suicidal : true},
+                    setState: { platform : false, valley : true },
                     nextPath: 38,
                 },
             ]
@@ -1069,17 +1069,17 @@ const storyLines = [
             // LANDING FLOATING PLATFORM
             {
                 id: 37,
-                text: 'Still affected by the black whole, the mountain world is a strange mix of mountains both in land and at the sky as clouds, there seem to be two places of interest for the aircraft to land, ',
+                text: 'Once in the platform ',
                 options: [
                     {
                         text: 'Choose human virtue',
-                        requiredState: (currentState) => currentState.mountainWorld,
+                        requiredState: (currentState) => currentState.platform,
                         setState: { damned : true },
                         nextPath: 39
                         },
                         {
                         text: 'Start the endless fight',
-                        requiredState: (currentState) => currentState.mountainWorld,
+                        requiredState: (currentState) => currentState.platform,
                         setState: {suicidal : true},
                         nextPath: 40,
                     },
@@ -1632,12 +1632,12 @@ const storyLines = [
     // TERMINUS
             {
             id: 68,
-            text: 'on the outter reached of the system, an Earth size planet shows uo n the screen, it may not be as watery as home, instead it seems abandoned, like rest of a colapsed civilizatio, deeper into the atmosphere, there seem to be a plateu in one of the big ruins concentration',
+            text: 'On the outter reach of the system, an Earth size planet shows uo n the screen, it may not be as watery as home, instead it seems abandoned, like rest of a colapsed civilizatio, deeper into the atmosphere, there seem to be a plateu in one of the big ruins concentration',
             options: [
                 {
                     text: 'Explore the temple',
-                    requiredState: (currentState) => currentState.mountainWorld,
-                    setState: { damned : true },
+                    requiredState: (currentState) => currentState.ultimaMundi,
+                    setState: { temple : true },
                     nextPath: 69
                 },
             ]
@@ -1645,12 +1645,12 @@ const storyLines = [
         // TEMPLE
                 {
                 id: 69,
-                text: 'In the ruins of the temple a clear structure can be aapreciated, hte celling is gone, but at the center of the floors a crstal like structure remains, it asks for a hand, a human one, how strange,',
+                text: 'In the ruins of the temple a clear structure can be appreciated, the celling is gone, but at the center of the floors a cristal like structure remains, it asks for a hand, a human one, how strange,',
                 options: [
                     {
                         text: 'Put your hand on it',
-                        requiredState: (currentState) => currentState.mountainWorld,
-                        setState: { damned : true },
+                        requiredState: (currentState) => currentState.temple,
+                        setState: { activateStructure : true },
                         nextPath: 70
                     },
                 ]
@@ -1662,8 +1662,8 @@ const storyLines = [
                 options: [
                     {
                         text: 'Start the test',
-                        requiredState: (currentState) => currentState.mountainWorld,
-                        setState: { damned : true },
+                        requiredState: (currentState) => currentState.activateStructure,
+                        setState: { testOracle : true },
                         nextPath: 71
                     },
                 ]
@@ -1676,20 +1676,20 @@ const storyLines = [
                     options: [
                         {
                             text: '1000 years to reign again',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { psychoHistory : true },
                             nextPath: 70
                         },
                         {
                             text: '30.000 years is the path',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { psychoHistory : true },
                             nextPath: 72
                         },
                         {
                             text: '300 hundred years to fail',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { psychoHistory : true },
                             nextPath: 70
                         },
                     ]
@@ -1701,20 +1701,20 @@ const storyLines = [
                     options: [
                         {
                             text: 'law 0 a robot will save juanity from tiself',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { laws : true },
                             nextPath: 73
                         },
                         {
                             text: 'law I. A robot may not injure a human being or, through inaction, allow a human being to come to harm.',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { laws : true },
                             nextPath: 70
                         },
                         {
                             text: 'Second Law. robot must obey the orders given it by human beings except where such orders would conflict with the First Law.',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { laws : true },
                             nextPath: 70
                         },
                     ]
@@ -1726,20 +1726,20 @@ const storyLines = [
                     options: [
                         {
                             text: 'Follow the major',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { encyclopedists : true },
                             nextPath: 70
                         },
                         {
                             text: 'Avoid confrontation',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { encyclopedists : true },
                             nextPath: 74
                         },
                         {
                             text: 'Catalog all the knowledge',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned :true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { encyclopedists :true },
                             nextPath: 70
                         },
                     ]
@@ -1751,20 +1751,20 @@ const storyLines = [
                     options: [
                         {
                             text: 'Subyugation of the 4 kingdoms',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { majors : true },
                             nextPath: 70
                         },
                         {
                             text: 'Science by religion',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { majors : true },
                             nextPath: 70
                         },
                         {
                             text: 'Fallback',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { majors : true },
                             nextPath: 75
                         },
                     ]
@@ -1776,20 +1776,20 @@ const storyLines = [
                     options: [
                         {
                             text: 'The empire is outdated',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { traders : true },
                             nextPath: 70
                         },
                         {
                             text: 'Plutocracy',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { traders : true },
                             nextPath: 76
                         },
                         {
                             text: 'More in less',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { traders : true },
                             nextPath: 70
                         },
                     ]
@@ -1801,20 +1801,20 @@ const storyLines = [
                     options: [
                         {
                             text: 'TERMINUS',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { origin : true },
                             nextPath: 70
                         },
                         {
                             text: 'TRANTOR',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { origin : true },
                             nextPath: 70
                         },
                         {
                             text: 'TAZENDA',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.testOracle,
+                            setState: { origin : true },
                             nextPath: 79
                         },
                     ]
@@ -1826,14 +1826,14 @@ const storyLines = [
                     options: [
                         {
                             text: 'Tell me about his civilization',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.origin,
+                            setState: { final : true },
                             nextPath: 80
                         },
                         {
                             text: 'The oracle must be confused, I go along',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.origin,
+                            setState: { final : true },
                             nextPath: 80
                         },
                     ]
@@ -1846,14 +1846,12 @@ const storyLines = [
                         //ONLY TRUE ON OF THE TWO
                         {
                             text: 'Gives ypu a present, you go back to the ship',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true, ultimaMundi: false }, 
+                            requiredState: (currentState) => currentState.final,
                             nextPath: 2
                         },
                         {
                             text: 'We are in the middle of the 2253',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true },
+                            requiredState: (currentState) => currentState.final,
                             nextPath: 81
                         },
                     ]
@@ -1866,8 +1864,7 @@ const storyLines = [
                         //ONLY TRUE ON OF THE TWO
                         {
                             text: 'So this is why it recognizes my presence, but wait, what happened to ... \'humanity\'?',
-                            requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned : true }, 
+                            requiredState: (currentState) => currentState.final,
                             nextPath: 82
                         },
                     ]
@@ -1878,9 +1875,8 @@ const storyLines = [
                         options: [
                             {
                                 text: 'Is there a way to go back to my time?',
-                                requiredState: (currentState) => currentState.mountainWorld,
-                                setState: { damned : true }, 
-                                nextPath: 23
+                                requiredState: (currentState) => currentState.final,
+                                nextPath: 83
                             },
                         ]
                     },
@@ -1890,8 +1886,7 @@ const storyLines = [
                         options: [
                             {
                                 text: 'Thank you for the information, is there anyway to prevent ... this',
-                                requiredState: (currentState) => currentState.mountainWorld,
-                                setState: { damned : true }, 
+                                requiredState: (currentState) => currentState.final,
                                 nextPath: 84
                             },
                         ]
@@ -1902,8 +1897,8 @@ const storyLines = [
                         options: [
                             {
                                 text: 'You go back to the ship',
-                                requiredState: (currentState) => currentState.mountainWorld,
-                                setState: { damned : true, ultimaMundi: false }, 
+                                requiredState: (currentState) => currentState.final,
+                                setState: {ultimaMundi: false }, 
                                 nextPath: 2
                             },
                         ]

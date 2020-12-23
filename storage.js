@@ -93,7 +93,7 @@ let timelineDisplayer = (timeline) => {
     switch(timeline) {
         case 'Type I timeline':
             console.log('Type I background')
-            background.style.backgroundImage = "url('/ImagesVideos/typeI.jpg')"
+            background.style.backgroundImage = "url('/ImagesVideos/satan.jpg')"
             break
 
         case 'Type II timeline':
@@ -164,16 +164,7 @@ let timeLinesHistory = () => {
         console.log(timeReboots)
         // Using Object Destructuring and Property Shorthand;
         const timelineObjectType = (({ reboots, timeForwardMachine, satan }) => ({ reboots, timeForwardMachine, satan}))(dissectedTimeline)
-
         console.log(timelineObjectType)
-        //Now I clean the time from the timeLine loop and the timeMachine
-        //delete dissectedTimeline.timeForwardMachine
-        //delete dissectedTimeline.reboots
-        //A check is done to ensure all was carried as planned
-        //console.log(dissectedTimeline)
-       // console.log(timeMachineUse)
-        //console.log(timeReboots)
-        // We transform each timeline
         let dissectedTimelineS = JSON.stringify(timelineObjectType)
         console.log(dissectedTimelineS)
         //Now deleted we can proceed with the timeline path analysis through the generated switch function
