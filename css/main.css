@@ -50,7 +50,7 @@ body {
     color:rgb(255, 251, 251);
 }
 #optionPath{
-    max-height: 13em;
+    max-height: 70%;
     overflow-y: scroll;
 }
 /* SCORE PAGE STYLES */

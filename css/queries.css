@@ -56,6 +56,7 @@
 
     .terminalScreen {
         padding: 0.2em 0.4em;
+        width: 90%;
     }
     #timelineList {
         margin-bottom: 2em;

@@ -24,10 +24,15 @@ let augmenter = (planetSize) => {
 
 //Identifies in which planet we, for boleans is essential the !! and to forche the evaluation
 let planetIdentifier = () => {
+    // we select what to change
+    let background = document.getElementById('storyPage')
     switch(true) {
         case !!state.hellEternum:
             console.log('You are in Hell Eternum')
             sizeXYHW = 30;
+            background.style.opacity = 0.4;
+            background.style.backgroundColor = 'red'
+            // HERE WE CHANGE THE SYTLE DEPENDING ON THE PLANET
             console.log(sizeXYHW)
             break
         case !!state.waveWorld:
@@ -62,8 +67,9 @@ let planetIdentifier = () => {
             //setInterval(augmenter(sizeXYOW), 1000)
             break
         default:
-            console.log('Type Incomplete')
-            
+            console.log('Global view')
+            initialize();
+            sizeXYOW = 10
             return 'Type Incomplete'
         }}
 

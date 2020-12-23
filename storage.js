@@ -121,6 +121,7 @@ let timeLinesHistory = () => {
         // Here I add the event listener when hovering
         entry.addEventListener('mouseover', () => timelineDisplayer(timelineType) )
         //entry.addEventListener('mouseout', () => timelineNonDisplayer(timelineType) )
+        // FUNCTION TO USE ON FACT OF CHECKUT
         historyBox.appendChild(entry)
     }
 }
