@@ -1738,7 +1738,7 @@ const storyLines = [
                         {
                             text: 'Catalog all the knowledge',
                             requiredState: (currentState) => currentState.mountainWorld,
-                            setState: { damned :0true },
+                            setState: { damned :true },
                             nextPath: 70
                         },
                     ]
