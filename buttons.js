@@ -72,7 +72,7 @@ let homePageButtons = () =>{
     scores.addEventListener('click', () => scorePagebutton())
     footer.appendChild(button);
     footer.appendChild(scores);
-    vid.id = 'myVideo'
+    //vid.id = 'myVideo'
 
 }
 
@@ -87,7 +87,7 @@ let storyPageButton = () =>{
     while(footer.firstChild){
         footer.removeChild(footer.firstChild)
     }
-    vid.id = 'myVideoHidden'
+    //vid.id = 'myVideoHidden'
 
 /*
 // Generate the content of the story page
@@ -124,7 +124,7 @@ parent__container.appendChild(optionPath)
 
 //Story page button. TO BE CONTINUED
 let scorePagebutton = () =>{
-    vid.id = 'myVideoHidden'
+    //vid.id = 'myVideoHidden'
     let footer = document.querySelector('#controler')
     let terminalScreen = document.querySelector('.terminalScreen')
     const button = document.createElement('button')

@@ -1,3 +1,20 @@
+class planet {
+    constructor(id, text, options, timeDilation, game) {
+        this.id = id;
+        this.text = text;
+        this.options = options;
+        this.timeDilation = timeDilation;
+        this.game = game;
+    }
+
+
+
+
+
+}
+
+
+
 var speedController = 60;
 var sizeXYHW = 10;
 var sizeXYWW = 10;
@@ -24,7 +41,14 @@ let createSystem = () =>{
     ///Operation to apply when drawing new shapes.
     ctx.globalCompositeOperation = 'destination-over'
     ctx.save();
+    ctx.translate(300,250);
 
+    //Earth Center
+    let time = new Date();
+    //void ctx.rotate(angle);
+    // where to put it on the screen
+    ctx.translate(200,180) 
+    ctx.rotate(((2 * Math.PI) / speedController) * time.getSeconds() + ((2 * Math.PI) / ((speedController)*1000)) * time.getMilliseconds());
 
     //BIG CENTER CLACK WHOLE
 
@@ -182,14 +206,6 @@ let createSystem = () =>{
 // COLOR DESIGN FOR MIDDLE WORLD
 
 // BINARY SYSTEM CREATION
-let time = new Date()
-
-//System center
-
-//void ctx.rotate(angle);
-// where to put it on the screen
-ctx.translate(500,430) 
-ctx.rotate(((2 * Math.PI) / speedController) * time.getSeconds() + ((2 * Math.PI) / ((speedController)*1000)) * time.getMilliseconds());
 
     // Set the fill style and draw a rectangle
     ctx.fillStyle = gradientBH;
@@ -208,8 +224,6 @@ ctx.rotate(((2 * Math.PI) / speedController) * time.getSeconds() + ((2 * Math.PI
     ctx.stroke(); //end the path
     ctx.fill(); //fill up whatever was generated
     ctx.save();
-
-// CENTER
 
     //HELL ETERNUM PLANET
     // it has to modify 0.6 or 600 //
