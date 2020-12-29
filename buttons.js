@@ -21,6 +21,7 @@ let homePageButtons = () =>{
     sizeXYBW = 10;
     sizeXYRW = 10;
     sizeXYOW = 10;
+    speedController = 600;
     
 
 
