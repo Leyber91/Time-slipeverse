@@ -43,7 +43,7 @@ let planetIdentifier = () => {
             break
         case !!state.waveWorld:
             console.log('You are in Wave World')
-            sizeXYWW = 10*3
+            sizeXYWW = 30
             //Background modulator
             //This one changes the screens background
             background.style.backgroundColor = 'rgb(20, 115, 159)'
@@ -56,7 +56,7 @@ let planetIdentifier = () => {
             break
         case !!state.mountainWorld:
             console.log('You are in Mountain World')
-            sizeXYMW = 10*3
+            sizeXYMW = 30
             //Background modulator
             //This one changes the screens background
             background.style.backgroundColor = 'rgb(39, 118, 15)'
@@ -68,7 +68,7 @@ let planetIdentifier = () => {
             break
         case !!state.gateMoon:
             console.log('You are in Moon Gate')
-            sizeXYMWM = 10*3
+            sizeXYMWM = 30
             //Background modulator
             //This one changes the screens background
             background.style.backgroundColor = 'rgb(107, 107, 107)'
@@ -80,7 +80,7 @@ let planetIdentifier = () => {
             break
         case !!state.binaryWorlds:
             console.log('You are in the binary Worlds')
-            sizeXYBW = 10*3
+            sizeXYBW = 30
             //Background modulator
             //This one changes the screens background
             background.style.backgroundColor = 'rgb(117, 86, 230)'
@@ -92,7 +92,7 @@ let planetIdentifier = () => {
             break
         case !!state.ringWorld:
             console.log('You are in Rin World')
-            sizeXYRW = 10*3
+            sizeXYRW = 30
             //Background modulator
             //This one changes the screens background
             background.style.backgroundColor = 'rgb(238, 79, 195,)'
@@ -113,7 +113,7 @@ let planetIdentifier = () => {
             optionDisplayer.style.backgroundColor = 'rgb(8, 8, 79)'
             optionDisplayer.alpha(60)
             initialize();
-            sizeXYOW = 10*3
+            sizeXYOW = 30
             //setInterval(augmenter(sizeXYOW), 1000)
             break
         default:
@@ -124,7 +124,7 @@ let planetIdentifier = () => {
             optionDisplayer.style.backgroundColor = 'rgb(113, 151, 140)'
             optionDisplayer.alpha(25)
             initialize();
-            sizeXYOW = 10
+            sizeXYOW = 30
 
             return 'Type Incomplete'
         }}

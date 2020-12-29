@@ -10,9 +10,9 @@ let homePageButtons = () =>{
     let terminalScreen = document.getElementById('storyPage')
     let stateValues = Object.values(state)
     let visualizer = document.getElementById('visualizer')
-   
     terminalScreen.style.backgroundImage = "";
-
+    terminalScreen.removeAttribute("style")
+    //document.getElementById('timelineList').removeAttribute('style')
 // RESTART VALUES
     sizeXYHW = 10;
     sizeXYWW = 10;
@@ -80,6 +80,7 @@ let homePageButtons = () =>{
 //Story page button
 let storyPageButton = () =>{
     
+    
     let footer = document.querySelector('#controler')
     let container = document.querySelector('.elementHidden')
     container.className = 'container'
@@ -120,6 +121,8 @@ parent__container.appendChild(optionPath)
 
 
     footer.appendChild(button);
+    document.getElementById('timelineList').removeAttribute('style')
+
 }
 
 //Story page button. TO BE CONTINUED
@@ -150,8 +153,9 @@ let scorePagebutton = () =>{
     footer.appendChild(button)
     //terminalScreen.appendChild(visualizer)
     // addd absolute botttom.
-
+    document.getElementById('timelineList').removeAttribute('style')
     timeLinesHistory()
+    
 }
 
 homePageButtons()
