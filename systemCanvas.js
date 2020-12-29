@@ -1,4 +1,4 @@
-var speedController = 60;
+var speedController = 600;
 var sizeXYHW = 10;
 var sizeXYWW = 10;
 var sizeXYMW = 10;
@@ -6,6 +6,7 @@ var sizeXYMWM = 10;
 var sizeXYBW = 10;
 var sizeXYRW = 10;
 var sizeXYOW = 10;
+
 
 
 //this funciton will serve us to initiate the program
@@ -17,18 +18,12 @@ let createSystem = () =>{
     let canvas = document.getElementById('canvas')
     let ctx = canvas.getContext('2d');
     ctx.strokeStyle = "transparent";
-    ctx.canvas.width = window.innerWidth;
-    ctx.canvas.height = window.innerHeight;
+    ctx.canvas.width = document.body.clientWidth;
+    ctx.canvas.height = document.body.clientHeight;
 
+   
 
-    ///Operation to apply when drawing new shapes.
-    ctx.globalCompositeOperation = 'destination-over'
-    ctx.save();
-
-
-    //BIG CENTER CLACK WHOLE
-
-    // Create a radial gradient
+ // Create a radial gradient
     // The inner circle is at x=110, y=90, with radius=30
     // The outer circle is at x=100, y=100, with radius=70
     var gradientBH = ctx.createRadialGradient(40,40,16, 40,40,20);
@@ -176,228 +171,107 @@ let createSystem = () =>{
         gradientRWM.addColorStop(1, 'rgba(255, 0, 0, 0.25)');
 
 
+    ///Operation to apply when drawing new shapes.
+    ctx.globalCompositeOperation = 'destination-over'
+    ctx.save();
 
-
-
-// COLOR DESIGN FOR MIDDLE WORLD
 
 // BINARY SYSTEM CREATION
 let time = new Date()
 
-//System center
-
-//void ctx.rotate(angle);
-// where to put it on the screen
-ctx.translate(500,430) 
-ctx.rotate(((2 * Math.PI) / speedController) * time.getSeconds() + ((2 * Math.PI) / ((speedController)*1000)) * time.getMilliseconds());
-
-    // Set the fill style and draw a rectangle
-    ctx.fillStyle = gradientBH;
-    ctx.beginPath(); //start the path
-    //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
-    ctx.ellipse(40, 40, 20, 20, Math.PI / 4, 0, 2 * Math.PI)
-    ctx.stroke(); //end the path
-    ctx.fill(); //fill up whatever was generated
-
-
-    //CREATE THE SUN
-    ctx.fillStyle = gradientStar;
-    ctx.beginPath(); //start the path
-    //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
-    ctx.ellipse(-40, -40, 30, 30, Math.PI / 4, 0, 2 * Math.PI)
-    ctx.stroke(); //end the path
-    ctx.fill(); //fill up whatever was generated
-    ctx.save();
-
-// CENTER
-
-    //HELL ETERNUM PLANET
-    // it has to modify 0.6 or 600 //
-    ctx.rotate(((2 * Math.PI) / (speedController*0.05)) * time.getSeconds() + ((2 * Math.PI) / ((speedController)*50)) * time.getMilliseconds());
-    ctx.translate(100,0) //WE DRAW TO THE CLOSER ORBIT POSSIBLE. HELL WORLD
-    ctx.fillStyle = gradientHW;
-    ctx.beginPath(); //start the path
-    //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
-    ctx.ellipse(0, 0, sizeXYHW*0.6, sizeXYHW*0.6, Math.PI / 4, 0, 2 * Math.PI)
-    ctx.stroke(); //end the path
-    ctx.fill(); //fill up whatever was generated
-    ctx.restore();
-
-    //WAVE WORLD
-    ctx.rotate(((2 * Math.PI) / (speedController*0.1)) * time.getSeconds() + ((2 * Math.PI) / ((speedController)*100)) * time.getMilliseconds());
-    //void ctx.translate(x, y);
-    //ctx.translate(0,0);
-    //void ctx.fillRect(x, y, width, height);
-    ctx.translate(140,0) //WE DRAW TO THE CLOSER ORBIT POSSIBLE. HELL WORLD
-
-    ctx.fillStyle = gradientWW;
-    ctx.beginPath(); //start the path
-    //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
-    ctx.ellipse(0, 0, sizeXYWW*1.2,  sizeXYWW*1.2, Math.PI / 4, 0, 2 * Math.PI)
-    ctx.stroke(); //end the path
-    ctx.fill(); //fill up whatever was generated
-    ctx.restore();
-
+// FUNCTIONS FOR CREATION
+let drawPlanet = (orbitalSpeed, gradient, distanceFromSystemCenter, binary ,dimension, hasSatellite, firstPlanet, selectedIndicator) => {
     
-    ctx.save();
-    ctx.translate(300,250);
-    ctx.translate(200,180) 
-    ctx.save()
-
-
-    //MOUNTAIN WORLD
-    ctx.rotate(((2 * Math.PI) / (speedController*0.15)) * time.getSeconds() + ((2 * Math.PI) / ((speedController)*150)) * time.getMilliseconds());
-    //void ctx.translate(x, y);
-    //ctx.translate(0,0);
-    //void ctx.fillRect(x, y, width, height);
-    ctx.translate(175,0) //WE DRAW TO THE CLOSER ORBIT POSSIBLE. HELL WORLD
-
-    ctx.fillStyle = gradientMW;
-    ctx.beginPath(); //start the path
-    //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
-    ctx.ellipse(0, 0, sizeXYMW, sizeXYMW, Math.PI / 4, 0, 2 * Math.PI)
-    ctx.stroke(); //end the path
-    ctx.fill(); //fill up whatever was generated
-    ctx.restore();
-
-
-    //MIDDLE WORLD
-    ctx.rotate(((2 * Math.PI) / (speedController*0.2)) * time.getSeconds() + ((2 * Math.PI) / ((speedController)*200)) * time.getMilliseconds());
-    //void ctx.translate(x, y);
-    //ctx.translate(0,0);
-    //void ctx.fillRect(x, y, width, height);
-    ctx.translate(240,0) //WE DRAW TO THE CLOSER ORBIT POSSIBLE. HELL WORLD
-
-    ctx.fillStyle = gradientMDW;
-    ctx.beginPath(); //start the path
-    //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
-    ctx.ellipse(0, 0, sizeXYMWM*0.8, sizeXYMWM*0.8, Math.PI / 4, 0, 2 * Math.PI)
-    ctx.stroke(); //end the path
-    ctx.fill(); //fill up whatever was generated
-
-    ctx.save();
-        //MIDDLE WORLD MOON
-        ctx.rotate(((2 * Math.PI) / (speedController*0.2)) * time.getSeconds() + ((2 * Math.PI) / ((speedController)*200)) * time.getMilliseconds());
-        //void ctx.translate(x, y);
-        //ctx.translate(0,0);
-        //void ctx.fillRect(x, y, width, height);
-        ctx.translate(20,0) //WE DRAW TO THE CLOSER ORBIT POSSIBLE. HELL WORLD
-
-        ctx.fillStyle = gradientMWM;
+    let planetSpecs = () => {
+        ctx.rotate(rotation*orbitalSpeed)
+        ctx.translate(distanceFromSystemCenter,0)
+        ctx.fillStyle = gradient
         ctx.beginPath(); //start the path
         //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
-        ctx.ellipse(0, 0, sizeXYMWM*0.4, sizeXYMWM*0.4, Math.PI / 4, 0, 2 * Math.PI)
+        ctx.ellipse(binary, binary, dimension*selectedIndicator, dimension*selectedIndicator, Math.PI / 4, 0, 2 * Math.PI)
         ctx.stroke(); //end the path
         ctx.fill(); //fill up whatever was generated
-
-
+        //Translate it back
+        if (hasSatellite){
+            return ctx.save()
+            }
+        ctx.translate(-distanceFromSystemCenter,0)
+        }
+        
+    planetSpecs()
+    if (firstPlanet) {
     ctx.restore()
-    ctx.restore()
-    ctx.save();
-    ctx.translate(300,250);
-    ctx.translate(200,180) 
-    ctx.save()
+    }
+}
+
+let drawSatellite = (orbitalSpeed, gradient, distancePlanet, dimension, distanceFromSystemCenter, selectedIndicator) => {
+    let satelliteSpecs = () => {
+        ctx.rotate(rotation*orbitalSpeed)
+        ctx.translate(distancePlanet,0) //WE DRAW TO THE CLOSER ORBIT POSSIBLE. HELL WORLD
+        ctx.fillStyle = gradient;
+        ctx.beginPath(); //start the path
+        //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
+        ctx.ellipse(0, 0, dimension * selectedIndicator, dimension * selectedIndicator, Math.PI / 4, 0, 2 * Math.PI)
+        ctx.stroke(); //end the path
+        ctx.fill(); //fill up whatever was generated
+    ctx.restore();
+    ctx.translate(-distanceFromSystemCenter,0)
+    }
+    satelliteSpecs()
+}
 
 
+// CENTER SETTER ON
+ctx.translate(500,430) 
+ctx.save()
+//
+const rotation = ((2 * Math.PI) / speedController) * time.getSeconds() + ((2 * Math.PI) / ((speedController)*1000)) * time.getMilliseconds();
+//drawPlanet(orbitalSpeed, gradient, distanceFromSystemCenter, binary ,dimension, hasSatellite, firstPlanet, selectedIndicator)
+//BLACK HOLE
+drawPlanet(10, gradientBH, 0, 40, 20, false, false, 1)
+//STAR
+drawPlanet(0, gradientStar, 0, -40, 30, false, false, 1)
 
-    //BINARY WORLDS
-    ctx.rotate(((2 * Math.PI) / (speedController*0.25)) * time.getSeconds() + ((2 * Math.PI) / ((speedController)*250)) * time.getMilliseconds());
-    //void ctx.translate(x, y);
-    //ctx.translate(0,0);
-    //void ctx.fillRect(x, y, width, height);
-    ctx.translate(300,0) //WE DRAW TO THE CLOSER ORBIT POSSIBLE. HELL WORLD
-    ctx.rotate(((2 * Math.PI) / (speedController*0.1)) * time.getSeconds() + ((2 * Math.PI) / ((speedController)*100)) * time.getMilliseconds());
-    //PURPLE GAS GIANT
-    ctx.fillStyle = gradientBWB;
-    ctx.beginPath(); //start the path
-    //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
-    ctx.ellipse(15, 15, sizeXYBW*1.4, sizeXYBW*1.4, Math.PI / 4, 0, 2 * Math.PI)
-    ctx.stroke(); //end the path
-    ctx.fill(); //fill up whatever was generated
-
-    //BLUE GAS GIANT
-    ctx.fillStyle = gradientBWV;
-    ctx.beginPath(); //start the path
-    //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
-    ctx.ellipse(-20, -20, sizeXYBW*1.6, sizeXYBW*1.6, Math.PI / 4, 0, 2 * Math.PI)
-    ctx.stroke(); //end the path
-    ctx.fill(); //fill up whatever was generated
-
-    ctx.restore()
-
-
-    //RING WORLD
-    ctx.rotate(((2 * Math.PI) / (speedController*0.3)) * time.getSeconds() + ((2 * Math.PI) / ((speedController)*300)) * time.getMilliseconds());
-    //void ctx.translate(x, y);
-
-    //void ctx.fillRect(x, y, width, height);
-    ctx.translate(360,0) //WE DRAW TO THE CLOSER ORBIT POSSIBLE. HELL WORLD
-
+//SYSTEM PLANETS
+    //HELL ETERNUM PLANET. FIRST PLANET
+    drawPlanet(200, gradientHW, 8, 0, 0.5, 0, 1, sizeXYHW)
+    //WAVE WORLD. SECOND PLANET
+    drawPlanet(40, gradientWW, 140, 0, 1, 0, 0, sizeXYWW)
+    //MOUNTAIN WORLD. THIRD PLANET
+    drawPlanet(-30, gradientMW, 175, 0, 0.8, 0, 0, sizeXYMW)
+    //MIDDLE WORLD. FOURTH PLANET. HAS MOON
+    drawPlanet(-2, gradientMDW, 220, 0, 0.8, 1, 0, 7)
+        //MOON 1. drawSatellite = (orbitalSpeed, gradient, distancePlanet, dimension, distanceFromSystemCenter, selectedIndicator)
+        drawSatellite(80, gradientMWM, 15, 0.2, 220, sizeXYMWM)
+    //BINARY WORLDS.FIFTHS PLANETS
+    drawPlanet(-4, gradientBWB, 290, 15, 1.4, 0, 0, sizeXYBW) //BLUE
+    drawPlanet(0, gradientBWV, 290, -20, 1.7, 0, 0, sizeXYBW) //PINK
+    
+    //RING WORLD. ONLY NO FUNCTION WORLD
+    ctx.rotate(rotation)
+    ctx.translate(380,0) //WE DRAW TO THE CLOSER ORBIT POSSIBLE. HELL WORLD
     // RING
     ctx.lineWidth = 0.000001;
     ctx.fillStyle = 'rgba(255,160,12,0.5)';
     ctx.beginPath(); //start the path
-    //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
-
     ctx.ellipse(0, 0, 40, 6, Math.PI / 4, 0, 2 * Math.PI)
     ctx.stroke(); //end the path
     ctx.fill();
-    //BLUE GAS GIANT
+    //GAS GIANT
     ctx.fillStyle = gradientRW;
     ctx.beginPath(); //start the path
-    //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
     ctx.ellipse(0, 0,20, 20, Math.PI / 4, 0, 2 * Math.PI)
-
     ctx.stroke(); //end the path
     ctx.fill();
-
-     //fill up whatever was generated
-    ctx.save();
-
+    ctx.save(); //save the center gas
         //RINGWORLD MOON
-        ctx.rotate(((2 * Math.PI) / (speedController*0.2)) * time.getSeconds() + ((2 * Math.PI) / ((speedController)*200)) * time.getMilliseconds());
-        //void ctx.translate(x, y);
-        //ctx.translate(0,0);
-        //void ctx.fillRect(x, y, width, height);
-        ctx.translate(30,0) //WE DRAW TO THE CLOSER ORBIT POSSIBLE. HELL WORLD
+        drawSatellite(80, gradientRWM, 35, 0.4, 380, sizeXYRW)
 
-        ctx.fillStyle = gradientRWM;
-        ctx.beginPath(); //start the path
-        //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
-        ctx.ellipse(0, 0, sizeXYRW*0.5, sizeXYRW*0.5, Math.PI / 4, 0, 2 * Math.PI)
-        ctx.stroke(); //end the path
-        ctx.fill(); //fill up whatever was generated
-        ctx.restore();
-        ctx.restore();
-
-        ctx.save();
-        ctx.translate(300,250);
-        ctx.translate(200,180);
-        ctx.save()
-
-
-        
     //OUTER WORLD
-    ctx.rotate(((2 * Math.PI) / (speedController*0.4)) * time.getSeconds() + ((2 * Math.PI) / ((speedController)*400)) * time.getMilliseconds());
-    //void ctx.translate(x, y);
-    //ctx.translate(0,0);
-    //void ctx.fillRect(x, y, width, height);
-    ctx.translate(380,0) //WE DRAW TO THE CLOSER ORBIT POSSIBLE. HELL WORLD
-
-    ctx.fillStyle = gradientRWM;
-    ctx.beginPath(); //start the path
-    //ctx.ellipse(x, y, radiusX, radiusY, rotation, startAngle, endAngle [, anticlockwise]);
-    ctx.ellipse(0, 0, sizeXYOW*0.8, sizeXYOW*0.8, Math.PI / 4, 0, 2 * Math.PI)
-    ctx.stroke(); //end the path
-    ctx.fill(); //fill up whatever was generated
-
+    drawPlanet(-4, gradientRWM, 410, 0, 0.4, 0, 0, sizeXYBW) //PINK
     
 
-    
-
-//void ctx.drawImage(image, sx, sy, sWidth, sHeight, dx, dy, dWidth, dHeight);
-    //ctx.drawImage(sun, 200, 200, 300, 300);
-
+    //This part sets up the motiion
     window.requestAnimationFrame(createSystem);
 
 }
