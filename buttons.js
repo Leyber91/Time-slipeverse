@@ -2,7 +2,7 @@ const vid = document.getElementById('myVideo');
 const vidHidden = document.getElementById('myVideoHidden');
 // Creation of the home page buttons and the story buttons
 // Go Home page buttons
-let homePageButtons = () =>{
+const homePageButtons = () =>{
     let scenario = document.querySelector('#scenario');
     let optionPath = document.querySelector('#optionPath');
     let container = document.querySelector('.container')
@@ -69,19 +69,17 @@ let homePageButtons = () =>{
     button.className = 'button controllerButton'
     scores.innerText = 'TIMELINES'
     scores.className = 'button controllerButton'
-    button.addEventListener('click', () => storyPageButton())
-    scores.addEventListener('click', () => scorePagebutton())
+    button.addEventListener('click', storyPageButton)
+    scores.addEventListener('click', scorePagebutton)
     footer.appendChild(button);
     footer.appendChild(scores);
     //vid.id = 'myVideo'
-
 }
 
 
 //Story page button
-let storyPageButton = () =>{
-    
-    
+const storyPageButton = () =>{
+
     let footer = document.querySelector('#controler')
     let container = document.querySelector('.elementHidden')
     container.className = 'container'
@@ -90,67 +88,35 @@ let storyPageButton = () =>{
         footer.removeChild(footer.firstChild)
     }
     //vid.id = 'myVideoHidden'
-
-/*
-// Generate the content of the story page
-// Generate the div nodes
-const container = document.createElement('div')
-const scenario = document.createElement('div')
-const optionPath = document.createElement('div')
-
-// Generate the div nodes
-container.className = 'container'
-scenario.id = 'scenario'
-optionPath.id = 'optionPath'
-optionPath.className = 'button-flex-box'
-
-// Append the content to the section
-terminal.appendChild(container)
-let parent__container = document.querySelector('.container')
-parent__container.appendChild(scenario)
-parent__container.appendChild(optionPath)
-
-
-
 // END GENERATING CONTENT
-*/
     startJourney()
     const button = document.createElement('button')
     button.innerText = 'FINISH TIMELINE'
     button.className = 'button controllerButton'
-    button.addEventListener('click', () => homePageButtons())
-
-
+    button.addEventListener('click', homePageButtons)
     footer.appendChild(button);
     document.getElementById('timelineList').removeAttribute('style')
-
 }
 
 //Story page button. TO BE CONTINUED
-let scorePagebutton = () =>{
+const scorePagebutton = () =>{
     //vid.id = 'myVideoHidden'
     let footer = document.querySelector('#controler')
     let terminalScreen = document.querySelector('.terminalScreen')
     const button = document.createElement('button')
-    // define de visualizer on result
-    //const visualizer = document.createElement('div')
-    //visualizer.className = 'container'
-    //visualizer.id = 'visualizer'
     let container = document.querySelector('.elementHidden')
     /// We add class timelines to make have an identifier for the container
     container.className = 'container timelines'
     container.id = 'timelineList'
     scenarioToPresent.innerHTML = "TIMELINES CREATED"
     timelinesContainer = document.getElementById('optionPath')
-    
-    
     while(footer.firstChild){
         footer.removeChild(footer.firstChild)
     }
  
     button.innerText = 'GO HOME'
     button.className = 'button controllerButton'
-    button.addEventListener('click', () => homePageButtons())
+    button.addEventListener('click', homePageButtons)
     footer.appendChild(button)
     //terminalScreen.appendChild(visualizer)
     // addd absolute botttom.
@@ -161,16 +127,14 @@ let scorePagebutton = () =>{
 
 homePageButtons()
 
-//LOCAL STORAGE RESET
-let resetLocalStorage = () =>{
+//LOCAL STORAGE RESET. ONLY FOR TESTING PURPOSES
+const resetLocalStorage = () =>{
     let localStorageButton = document.getElementById('localStorageReset')
     let clearStorage = () => {
         localStorage.clear()
         location.reload()
     }
-    
-    localStorageButton.addEventListener('click', () => clearStorage())
-    
+    localStorageButton.addEventListener('click', clearStorage)
 }
 
 resetLocalStorage()

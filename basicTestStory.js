@@ -3,7 +3,7 @@ const scenarioToPresent = document.querySelector('#scenario');
 const pathToChoose = document.querySelector('#optionPath');
 
 //track what path we are
-let state = {};
+var state = {};
 //times timeline srestarted added
 let restartTimelineCount = 0;
 // making sure first time we start from zero

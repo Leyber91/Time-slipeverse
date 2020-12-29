@@ -21,7 +21,6 @@ let createSystem = () =>{
     ctx.canvas.width = document.body.clientWidth;
     ctx.canvas.height = document.body.clientHeight;
 
-   
 
  // Create a radial gradient
     // The inner circle is at x=110, y=90, with radius=30
